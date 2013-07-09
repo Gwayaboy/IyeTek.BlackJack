@@ -1,0 +1,22 @@
+The Domain is a the center of the onion architecture which does not depend on anything and isolated.
+it comes with a very good speration of the concerns and loosely coupled code
+All business logic lives here with normal OO principles.
+http://jeffreypalermo.com/blog/the-onion-architecture-part-1/
+
+As part of the core layer, wrapping around the very domain Models (Cards / Decks, ect) there domain service layer that is depends on the domain.
+typically gluing together interaction between multiple domain object like the game manager service (BlackJackGameService) and ShoeService.
+
+Tests and UI layer(s) lives (side by side) in the most outer circle in the architecture.
+
+External service like web service to enable players to play over network would be defined in the core project and 
+will have their implentation living on the outmost layer in Services at the same level as UI and Tests.
+http://jared-jenkins.com/onion_arch_presentation/#onion-diagram
+
+If the application needs to persist repositories interfaces are again defined in the inner core layer and are implemented in the infrastructure (everything that is not public facing lives there) 
+
+When the application becomes a bit more complex an Ioc Container like Autofac, structureMap or Castle Windsor to  handle the object graph and dependency injection.
+
+The final structure of a onion architecture solution including a WCF services will look like :
+http://onionarch.codeplex.com/SourceControl/latest#src/PayPalServices/PayPalService.svc
+
+Franck

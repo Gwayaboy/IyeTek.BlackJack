@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'/>
+    <link href='BDDfy.css' rel='stylesheet'/>
+    <script type='text/javascript' src='jquery-1.7.1.min.js'></script>
+    <script type='text/javascript' src='BDDfy.js'></script>
+    <title>BDDfy Test Result 7/9/2013</title>
+  </head>
+  <body>
+    <div id='main'>
+      <div class='header'>
+        <div id='BDDfyTitle'>IyeTek - Black Jack Card Game</div>
+        <div id='BDDfyDescription'>Executable Specifications</div>
+      </div>
+      <section class='summary'>
+        <h3 class='label'>Summary:</h3>
+        <ul class='resultSummary'>
+          <li class='storySummary'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Stories</div>
+              <span class='summaryCount'>1</span>
+            </div>
+          </li>
+          <li class='scenarioSummary'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Scenarios</div>
+              <span class='summaryCount'>7</span>
+            </div>
+          </li>
+          <li class='Passed'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Passed</div>
+              <span class='summaryCount'>7</span>
+            </div>
+          </li>
+          <li class='Inconclusive'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Inconclusive</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+          <li class='NotImplemented'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Not Implemented</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+          <li class='Failed'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Failed</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div id='testResult'>
+        <div id='detailsHeader'>
+          <h3 id='detailsLable'>Details:</h3>
+          <div id='expandCollapse'>
+            <a href='#' class='expandAll'>[expand all]</a>
+            <a href='#' class='collapseAll'>[collapse all]</a>
+          </div>
+        </div>
+        <ul class='testResult'>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>User Story 01: Playing black jack with one Dealer and one Player</div>
+                <ul class='storyNarrative'>
+                  <li>As a Player</li>
+                  <li>I want to play against a computed Dealer</li>
+                  <li>So that practise my betting skills</li>
+                </ul>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='655365ea-b7a4-48a3-8afc-1ddba380e673'>Scenario 01 -  Dealer and Player Push when both black Jack</div>
+                  <ul class='steps' id='655365ea-b7a4-48a3-8afc-1ddba380e673'>
+                    <li class='step Passed  SetupState ' data-toggle-target='158b49eb-522a-4647-9c18-57789860bf56' >
+                      <span>Given both dealer and player have blackjack Hands</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='e30782cb-85d6-45c2-819c-a692163315c1' >
+                      <span>When resolving dealer and player statuses</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='7f6b7c07-bdf6-4914-85c6-fafccff1b15d' >
+                      <span>Then both Dealer and Player have a tie</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='2a10c186-00e8-403c-a027-2cccf2f7e6f9'>Scenario 02 -  Dealer and Player Push when both have same score</div>
+                  <ul class='steps' id='2a10c186-00e8-403c-a027-2cccf2f7e6f9'>
+                    <li class='step Passed  SetupState ' data-toggle-target='7f240aed-1c04-4575-ac8b-a4bf28208fb3' >
+                      <span>Given the Player took a 2 Spades Card</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='0edd2009-3694-4e86-94e1-ab2f812eb85a' >
+                      <span>And the Dealer took a 6 Hearts Card</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='aa32831b-933c-453e-a8f4-ab7557cd619d' >
+                      <span>When resolving dealer and player statuses</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='b7c34737-5886-4467-83d5-70fc73857fa4' >
+                      <span>Then both Dealer and Player have a tie</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='bf723aa3-a92d-49ab-8cdf-2ff4dab69622'>Scenario 03 -  Dealer wins when first to get black Jack Hand</div>
+                  <ul class='steps' id='bf723aa3-a92d-49ab-8cdf-2ff4dab69622'>
+                    <li class='step Passed  SetupState ' data-toggle-target='64ad14ad-2922-4402-af89-d97c82d2fad5' >
+                      <span>Given the Dealer starts with an Hand scoring 10</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='3558a230-ae38-44c7-adfb-a987c9d0b886' >
+                      <span>And the Player starts with an Hand scoring 12</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='2440845c-a96b-4056-b3a0-093d20cee437' >
+                      <span>And the Player took a Eight Card</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='27214795-4f22-44c8-8f70-049704e0be53' >
+                      <span>And the Dealer took an Ace</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='6d3f98d0-7353-4b8a-ae15-626f8c9868b4' >
+                      <span>When resolving the issue of the game</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='75074e98-9a41-4bdc-bf34-a0ad16abe39a' >
+                      <span>Then Dealer should Win</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='0250ea07-a214-421f-a510-1b53156d3ab4' >
+                      <span>And The Player should Loose</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='20c80186-1518-4c2b-9a9a-26aabb82b4d7'>Scenario 04 -  Player looses immediately when goes bust</div>
+                  <ul class='steps' id='20c80186-1518-4c2b-9a9a-26aabb82b4d7'>
+                    <li class='step Passed  SetupState ' data-toggle-target='9473fc6d-5200-442a-a57d-c1dab4f15bb6' >
+                      <span>Given the Dealer starts with an Hand scoring 17</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='1efc7daa-0dd5-4253-bac0-6611cb2cba8b' >
+                      <span>And the Player starts with an Hand scoring 15</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='08de8496-fb1b-40cb-bf8f-feef94f7e7da' >
+                      <span>And the Player took a seven hearts Card</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='82b9e174-f57e-4ddc-8f1c-6d6bfc3c8c5b' >
+                      <span>And the Dealer stays</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='64fa02f0-2812-417d-b921-5df3486e7236' >
+                      <span>When resolving the issue of the game</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='ea6480e4-85fe-4c1e-ab75-bb0406e766dd' >
+                      <span>Then Dealer should Win</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='d0ed1e29-47f7-4570-b012-aa6069d083da' >
+                      <span>And The Player should Loose</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='65a3ea47-2b4d-4221-8cbc-43a9d81bcf8c'>Scenario 05 -  Player wins when Dealer goes bust and he is not</div>
+                  <ul class='steps' id='65a3ea47-2b4d-4221-8cbc-43a9d81bcf8c'>
+                    <li class='step Passed  SetupState ' data-toggle-target='9c9a2d6c-10b1-4833-9b5a-160c48cb3dd8' >
+                      <span>Given the Dealer starts with an Hand scoring 15</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='7decb8f8-ab34-445d-ae34-dacf4e4dd95f' >
+                      <span>And the Player starts with an Hand scoring 20</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='d39227a2-7ba7-4f9d-b213-a1b96b53bf8d' >
+                      <span>And the Player stays</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='8ba678b1-f999-409a-9ac0-eaf3824f7246' >
+                      <span>And the Dealer took a seven of Hearts</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='372bda35-e1bd-44d6-b0e6-339fa629ffac' >
+                      <span>When resolving the issue of the game</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='86df3a08-0c7c-458d-8f2d-11105a52436a' >
+                      <span>Then Dealer should Loose</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='62497d53-31ba-4adc-8e72-77d03be9594c' >
+                      <span>And The Player should Win</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='4fa4fbfb-0fdd-4898-8a5d-068f635a15eb'>Scenario 06 -  Player wins when scores higher than Dealer</div>
+                  <ul class='steps' id='4fa4fbfb-0fdd-4898-8a5d-068f635a15eb'>
+                    <li class='step Passed  SetupState ' data-toggle-target='e972bda9-32c4-44d0-a4b8-a229fd1688c7' >
+                      <span>Given the Dealer starts with an Hand scoring 17</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='8a393f12-b0ce-4463-84de-b0bd0ad482d5' >
+                      <span>And the Player starts with an Hand scoring 16</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='b0ba8cd7-def2-4a49-a216-90e0696884c6' >
+                      <span>And the Player took a 4 hearts Card</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='b3d1d9bb-2ed4-41a3-b5af-bd8ed86eb7e6' >
+                      <span>And the Dealer took a 2 diamonds Card</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='1ff60799-920b-4c68-aa08-b34e44b070e2' >
+                      <span>When resolving the issue of the game</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='0113540c-aa1f-4bd6-83e3-b3efbf7135dc' >
+                      <span>Then Dealer should loose</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='1cdf32ab-5250-4c28-bd6f-6d22df1ba6c5' >
+                      <span>And The Player should win</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='93716123-eab6-424f-ba33-ac130be5666e'>Scenario 07 -  Dealer wins when scores higher than Player</div>
+                  <ul class='steps' id='93716123-eab6-424f-ba33-ac130be5666e'>
+                    <li class='step Passed  SetupState ' data-toggle-target='779475fd-9f9d-477e-9f81-35c42061e614' >
+                      <span>Given the Dealer starts with an Hand scoring 17</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='09cfb4f0-ebab-4360-b9b0-043b8dbf4333' >
+                      <span>And the Player starts with an Hand scoring 16</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='af383bc5-35ba-4416-985b-c67d8d56ad55' >
+                      <span>And the Player took a 2 diamonds Card</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='c4ba34bd-aa9f-4cf2-ab0e-dc7c473c9cc5' >
+                      <span>And the Dealer took a 4 hearts Card</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='6bcff9b6-3854-41fb-a6df-1cafd753079d' >
+                      <span>When resolving the issue of the game</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='44111399-21a9-436e-8454-e31dae738015' >
+                      <span>Then Dealer should Win</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='c70e24b1-85a1-4fbc-ac56-1a124da24394' >
+                      <span>And The Player should Loose</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p><span>Tested at: 7/9/2013 2:24:52 PM</span></p>
+      </div>
+    </div>
+    <div class='footer'>Powered by <a href='http://hg.mehdi-khalili.com/BDDfy/wiki/Home'>BDDfy</a> framework</div>
+  </body>
+</html>

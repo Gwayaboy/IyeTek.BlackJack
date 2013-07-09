@@ -1,0 +1,13 @@
+Acceptance / Executable specificationd are used to test and document entire slices of the systems's functionalities
+
+- Express in Given / When /Then express in natural language a particular test cases 
+- Mimic user inputs and fine tune the initial context ( what will the shoe contain and what would be initial
+hands for dealers and player and what cards will be dealt)
+- The income being fixed, the expected outcome document and test the behaviour of the system.
+
+- 7 scenarios have been written to cover most outcomes of the black jack game
+- These scenarios along with unit tests can also drive developments
+- The results of the excutable specifications are rendered in the an html report in .\Report of the project
+
+http://www.agilemodeling.com/essays/executableSpecifications.htm
+http://www.mehdi-khalili.com/bddify-in-action/introduction

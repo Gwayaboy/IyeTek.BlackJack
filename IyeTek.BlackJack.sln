@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{87B7F855-46EA-4772-B989-59EE16378555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{8EBB741C-82DE-41B1-B6FB-8117CD0CE0BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C8F480CA-6728-44B3-9E86-6BFEC5A757A1}"
+	ProjectSection(SolutionItems) = preProject
+		OnionNtierArchitecture.txt = OnionNtierArchitecture.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D8B3E934-2C84-4905-AF50-1F5A3C1BB90E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Executable Specifications", "01 - Executable Specifications", "{42D73641-8E88-414D-9774-B02987DF23A7}"
+	ProjectSection(SolutionItems) = preProject
+		WhyExecutableSpecifications.txt = WhyExecutableSpecifications.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Unit Tests", "02 - Unit Tests", "{C3EA1D06-4BE4-474A-B07E-8F1E82008A47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Test Library", "03 - Test Library", "{BE84D3E1-AD60-473C-A304-571A631D762E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IyeTek.BlackJack.Core", "application\IyeTek.BlackJack.Core\IyeTek.BlackJack.Core.csproj", "{60AC8733-3444-492D-99F3-E2676D938E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IyeTek.BlackJack.ConsolePresentation", "application\IyeTek.BlackJack.ConsolePresentation\IyeTek.BlackJack.ConsolePresentation.csproj", "{2A941908-92BD-43CB-8950-F8B15608BEBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IyeTek.BlackJack.TestLibrary", "test\IyeTek.BlackJack.TestLibrary\IyeTek.BlackJack.TestLibrary.csproj", "{AE9C78C4-7EFB-4DAC-A979-0E85DB8E480E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A1EF7111-E55A-4707-9327-7B3EC282FA82}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IyeTek.BlackJack.ExecutableSpecifications", "test\IyeTek.BlackJack.ExecutableSpecifications\IyeTek.BlackJack.ExecutableSpecifications.csproj", "{40F2CD83-26E2-47B1-B74D-803E30700A21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IyeTek.BlackJack.UnitTests", "test\IyeTek.BlackJack.UnitTests\IyeTek.BlackJack.UnitTests.csproj", "{AA5A0B3D-8129-46C0-8E13-6044D3F58299}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60AC8733-3444-492D-99F3-E2676D938E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AC8733-3444-492D-99F3-E2676D938E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AC8733-3444-492D-99F3-E2676D938E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AC8733-3444-492D-99F3-E2676D938E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A941908-92BD-43CB-8950-F8B15608BEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A941908-92BD-43CB-8950-F8B15608BEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A941908-92BD-43CB-8950-F8B15608BEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A941908-92BD-43CB-8950-F8B15608BEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE9C78C4-7EFB-4DAC-A979-0E85DB8E480E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE9C78C4-7EFB-4DAC-A979-0E85DB8E480E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE9C78C4-7EFB-4DAC-A979-0E85DB8E480E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE9C78C4-7EFB-4DAC-A979-0E85DB8E480E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F2CD83-26E2-47B1-B74D-803E30700A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F2CD83-26E2-47B1-B74D-803E30700A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F2CD83-26E2-47B1-B74D-803E30700A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F2CD83-26E2-47B1-B74D-803E30700A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5A0B3D-8129-46C0-8E13-6044D3F58299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5A0B3D-8129-46C0-8E13-6044D3F58299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5A0B3D-8129-46C0-8E13-6044D3F58299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5A0B3D-8129-46C0-8E13-6044D3F58299}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87B7F855-46EA-4772-B989-59EE16378555} = {8EBB741C-82DE-41B1-B6FB-8117CD0CE0BB}
+		{C8F480CA-6728-44B3-9E86-6BFEC5A757A1} = {8EBB741C-82DE-41B1-B6FB-8117CD0CE0BB}
+		{2A941908-92BD-43CB-8950-F8B15608BEBC} = {87B7F855-46EA-4772-B989-59EE16378555}
+		{60AC8733-3444-492D-99F3-E2676D938E6E} = {C8F480CA-6728-44B3-9E86-6BFEC5A757A1}
+		{42D73641-8E88-414D-9774-B02987DF23A7} = {D8B3E934-2C84-4905-AF50-1F5A3C1BB90E}
+		{C3EA1D06-4BE4-474A-B07E-8F1E82008A47} = {D8B3E934-2C84-4905-AF50-1F5A3C1BB90E}
+		{BE84D3E1-AD60-473C-A304-571A631D762E} = {D8B3E934-2C84-4905-AF50-1F5A3C1BB90E}
+		{40F2CD83-26E2-47B1-B74D-803E30700A21} = {42D73641-8E88-414D-9774-B02987DF23A7}
+		{AA5A0B3D-8129-46C0-8E13-6044D3F58299} = {C3EA1D06-4BE4-474A-B07E-8F1E82008A47}
+		{AE9C78C4-7EFB-4DAC-A979-0E85DB8E480E} = {BE84D3E1-AD60-473C-A304-571A631D762E}
+	EndGlobalSection
+EndGlobal

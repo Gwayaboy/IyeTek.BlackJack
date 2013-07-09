@@ -1,0 +1,5 @@
+E:\Developement\JobHunting\iyeTek\IyeTek.BlackJack\IyeTek.BlackJack.Core\bin\Debug\IyeTek.BlackJack.Core.dll
+E:\Developement\JobHunting\iyeTek\IyeTek.BlackJack\IyeTek.BlackJack.Core\bin\Debug\IyeTek.BlackJack.Core.pdb
+E:\Developement\JobHunting\iyeTek\IyeTek.BlackJack\IyeTek.BlackJack.Core\obj\Debug\IyeTek.BlackJack.Core.csprojResolveAssemblyReference.cache
+E:\Developement\JobHunting\iyeTek\IyeTek.BlackJack\IyeTek.BlackJack.Core\obj\Debug\IyeTek.BlackJack.Core.dll
+E:\Developement\JobHunting\iyeTek\IyeTek.BlackJack\IyeTek.BlackJack.Core\obj\Debug\IyeTek.BlackJack.Core.pdb

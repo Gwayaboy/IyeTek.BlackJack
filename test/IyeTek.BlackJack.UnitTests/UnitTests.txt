@@ -1,0 +1,5 @@
+﻿Unit test are using also expressed with the Given \ When \ Then language 
+it makes easier to see what is tested from which conditions
+To reduce the set up noise in test instead of using tradional Mock, 
+Nsubstiture (http://nsubstitute.github.io/) do a better job at autoconfiguring even nested types
+Fluent assertion has better expression of the error displayed and is easily extensible

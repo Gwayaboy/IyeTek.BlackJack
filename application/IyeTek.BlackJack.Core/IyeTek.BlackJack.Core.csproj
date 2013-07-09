@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60AC8733-3444-492D-99F3-E2676D938E6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IyeTek.BlackJack.Core</RootNamespace>
+    <AssemblyName>IyeTek.BlackJack.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessRuleException.cs" />
+    <Compile Include="Domain\Base\FiftyTwoCardsDeck.cs" />
+    <Compile Include="Domain\Base\Hand.cs" />
+    <Compile Include="Domain\Base\Player.cs" />
+    <Compile Include="Domain\ComputerDealer.cs" />
+    <Compile Include="Domain\BlackJackDeck.cs" />
+    <Compile Include="Domain\Enumerations\BlackJackCardType.cs" />
+    <Compile Include="Domain\Enumerations\CardType.cs" />
+    <Compile Include="Domain\Enumerations\Statuses\Lost.cs" />
+    <Compile Include="Domain\Enumerations\Statuses\Playing.cs" />
+    <Compile Include="Domain\Enumerations\Statuses\Status.cs" />
+    <Compile Include="Domain\Enumerations\Statuses\Tied.cs" />
+    <Compile Include="Domain\Enumerations\Statuses\Won.cs" />
+    <Compile Include="Domain\Enumerations\SuitType.cs" />
+    <Compile Include="Domain\HumanPlayer.cs" />
+    <Compile Include="Domain\Card.cs" />
+    <Compile Include="Domain\Services\BlackJackShoeService.cs" />
+    <Compile Include="Domain\BlackJackHand.cs" />
+    <Compile Include="Domain\Services\ShoeService.cs" />
+    <Compile Include="Domain\Services\BlackJackGameService.cs" />
+    <Compile Include="Interfaces\Domain\IDeck.cs" />
+    <Compile Include="Interfaces\Domain\IHand.cs" />
+    <Compile Include="Interfaces\Services\IGameService.cs" />
+    <Compile Include="Interfaces\Services\IShoeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
