@@ -98,7 +98,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BDDfy.readme.txt" />
     <Content Include="UnitTests.txt" />
     <Content Include="Report\UnitTests.html" />
   </ItemGroup>
