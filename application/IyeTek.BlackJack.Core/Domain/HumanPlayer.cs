@@ -10,7 +10,10 @@ namespace IyeTek.BlackJack.Core.Domain
     /// </summary>
     public class HumanPlayer : Player
     {
-        public HumanPlayer(IShoeService shoeService, string name = "") : base(shoeService, name)
+        public HumanPlayer(IShoeService shoeService,
+                           IScoreCalculator scoreCalculator,
+                           string name = "")
+            : base(shoeService, scoreCalculator, name)
         {
         }
 

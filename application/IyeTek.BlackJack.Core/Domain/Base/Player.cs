@@ -1,5 +1,4 @@
 ﻿using System;
-using IyeTek.BlackJack.Core.Interfaces.Domain;
 using IyeTek.BlackJack.Core.Interfaces.Services;
 using IyeTek.BlackJack.Core.Domain.Enumerations.Statuses;
 
@@ -13,8 +12,8 @@ namespace IyeTek.BlackJack.Core.Domain.Base
     /// </summary>
     public abstract class Player
     {
+        private readonly IScoreCalculator _scoreCalculator;
 
-        private readonly Lazy<IHand> _hand;
         
         /// <summary>
         /// Each player can have a name to identify him
@@ -22,29 +21,35 @@ namespace IyeTek.BlackJack.Core.Domain.Base
         public string Name { get; protected set; }
 
         protected IShoeService ShoeService { get; private set; }
-        
-        public IHand Hand { get { return _hand.Value; } }
+
+        public Hand Hand { get; protected set; }
         public Status Status { get; internal set; }
-        public int Score { get { return Hand.Score; } }
+        public int Score { get { return _scoreCalculator.Calculate(Hand); } }
 
         /// <summary>
         /// When created the initial status and score of the player are determined
         /// </summary>
         /// <param name="shoeService">depending on the implementation (strategy pattern) of the shoe the hand may differ</param>
+        /// <param name="scoreCalculator"></param>
         /// <param name="name"></param>
-        protected Player(IShoeService shoeService, string name = "")
+        protected Player(IShoeService shoeService, IScoreCalculator scoreCalculator, string name = "")
         {
+            _scoreCalculator = scoreCalculator;
             ShoeService = shoeService;
-            _hand = new Lazy<IHand>(MakeInitialHand);
             Name = name;
-            
+            Reset();
+        }
+
+        public void Reset()
+        {
+            MakeInitialHand();
             Status = Status.Playing;
             Status.CalculateScore(this);
         }
 
-        protected virtual IHand MakeInitialHand()
+        protected virtual void MakeInitialHand()
         {
-            return ShoeService.MakeInitialHand();
+            Hand = ShoeService.MakeInitialHand();
         }
         
         /// <summary>

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using IyeTek.BlackJack.Core.Interfaces.Domain;
 
 namespace IyeTek.BlackJack.Core.Domain.Services
 {
@@ -12,11 +11,12 @@ namespace IyeTek.BlackJack.Core.Domain.Services
     public class BlackJackShoeService : ShoeService
     {
 
-        public BlackJackShoeService(IDeck deck) : base(deck)
+        public BlackJackShoeService(Deck deck) : base(deck)
         {
         }
 
-        public BlackJackShoeService(IEnumerable<IDeck> decks) : base(decks)
+        public BlackJackShoeService(IEnumerable<Deck> decks)
+            : base(decks)
         {
         }
 
@@ -24,14 +24,14 @@ namespace IyeTek.BlackJack.Core.Domain.Services
         /// Serves an Hand made out of 2 initial cards 
         /// </summary>
         /// <returns></returns>
-        public override IHand MakeInitialHand(Action<Card[]> actionOnCardsInHand = null)
+        public override Hand MakeInitialHand(Action<Card[]> actionOnCardsInHand = null)
         {
-            var cardsInHand = new[] {DealCard(), DealCard()};
+                var cardsInHand = new[] {DealCard(), DealCard()};
             if (actionOnCardsInHand != null)
             {
                 actionOnCardsInHand(cardsInHand);
             }   
-            return new BlackJackHand(cardsInHand);
+            return new Hand(cardsInHand);
         }
     }
 

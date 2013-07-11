@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,14 @@
     <ProjectReference Include="..\IyeTek.BlackJack.Core\IyeTek.BlackJack.Core.csproj">
       <Project>{60ac8733-3444-492d-99f3-e2676d938e6e}</Project>
       <Name>IyeTek.BlackJack.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IyeTek.BlackJack.DependencyResolution\IyeTek.BlackJack.DependencyResolution.csproj">
+      <Project>{9ADED960-B806-4B1F-9972-70661D8C5458}</Project>
+      <Name>IyeTek.BlackJack.DependencyResolution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IyeTek.BlackJack.Infrastructure\IyeTek.BlackJack.Infrastructure.csproj">
+      <Project>{ADDE4D22-57F9-468F-B139-5D95DE2483C9}</Project>
+      <Name>IyeTek.BlackJack.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

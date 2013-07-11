@@ -1,105 +1,80 @@
 ﻿using System;
-using Humanizer;
+using IyeTek.BlackJack.Core.Commands;
 using IyeTek.BlackJack.Core.Domain;
 using IyeTek.BlackJack.Core.Domain.Base;
-using IyeTek.BlackJack.Core.Domain.Services;
-using IyeTek.BlackJack.Core.Domain.Enumerations.Statuses;
+using IyeTek.BlackJack.DependencyResolution;
 
 namespace IyeTek.BlackJack.ConsolePresentation
 {
     class Program
     {
+        private const string HitCardAction = "h";
+        private const string PassCardAction = "s";
+
         static void Main(string[] args)
         {
-            var fiftyTwoCardsDeck = new BlackJackDeck();
-            var continueCommand = "";
+            ApplicationConfigurator.BuildContainer();
+            var cardGame = ApplicationConfigurator.CardGame;
+            var commandProcessor = ApplicationConfigurator.CommandProcessor;
+
+
+            commandProcessor
+                .ConfigureCommand<TakeTurnCommand>(HitCardAction)
+                .ConfigureCommand<PassTurnCommand>(PassCardAction);
+
+            var dealer = cardGame.Get<ComputerDealer>(); ;
+            var player = cardGame.Get<HumanPlayer>();
+
+
+            string continueCommand;
             do
             {
                 Console.Clear();
-                var shoe = new BlackJackShoeService(fiftyTwoCardsDeck);
+                cardGame.Reset();
 
-                var player = new HumanPlayer(shoe,"Franck");
-                var dealer = new ComputerDealer(shoe);
+                string playerAction;
 
-                var game = new BlackJackGameService(dealer, new Player[] {player});
+              
 
-                var playerAction = string.Empty;
-
-                DisplayCardsFor(dealer);
-
+                ExecutionResult executionResult;
                 do
                 {
-                    DisplayCardsFor(player);
-                    playerAction = DisplayScoreAndTakePlayerAction(player, playerAction);
-                    if (!string.IsNullOrWhiteSpace(playerAction) && playerAction.ToLower() == "h")
-                    {
-                        player.TakeTurn();
-                    }
+
+                    DiplayPlayerCards(dealer, player);
+                    playerAction = DisplayScoreAndTakePlayerAction(player);
+                    executionResult = commandProcessor.Execute(playerAction);
 
 
-                } while (player.Status.Is<Playing>() &&
-                         !string.IsNullOrWhiteSpace(playerAction)
-                         && playerAction.ToLower() == "h");
+                } while (!string.IsNullOrWhiteSpace(playerAction)
+                         && playerAction.ToLower() == "h" && executionResult.IsSuccessful);
 
-                if (player.Status.IsNot<Lost>())
-                {
-                    dealer.TakeTurn();
-                    DisplayCardsFor(dealer);
-                }
-                else
-                {
-                    DisplayCardsFor(player);
-                }
-                game.ResolveStatuses();
-
-                DisplayPlayerStatus(player, dealer);
+                DiplayPlayerCards(dealer, player);
+                DisplayPlayerStatus(executionResult);
 
                 continueCommand = DisplayContinueMessage();
             } while (continueCommand.ToLower() == "p");
 
         }
 
-        private static void DisplayPlayerStatus(Player player, Player dealer)
+        private static void DiplayPlayerCards(ComputerDealer dealer, HumanPlayer player)
         {
-            var playerStatus = string.Empty;
-            var playerName = GetPlayerName(player);
+            Console.Clear();
+            DisplayCardsFor(dealer);
+            DisplayCardsFor(player);
+        }
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            
-            if (player.Status.Is<Won>())
-            {
-                playerStatus = string.Format("{0} has won", playerName);
-            }
-            else if (player.Status.Is<Tied>())
-            {
-                playerStatus = string.Format("{0} and {1} are tie", playerName, GetPlayerName(dealer));
-            }
-            else if (player.Status.Is<Lost>())
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                playerStatus = string.Format("{0} has lost", playerName);
-            }
-
-            Console.WriteLine("{0}", playerStatus);
-            Console.WriteLine("reason: {0}",player.Status.Reason);
+        private static void DisplayPlayerStatus(ExecutionResult executionResult)
+        {
             Console.ResetColor();
+            
+            foreach (var error in executionResult.Messages)
+            {
+                Console.WriteLine(error);
+            }
             Console.WriteLine("");
         }
 
-        private static string GetPlayerName(Player player)
-        {
-            var playerName = string.Empty;
-            if (!string.IsNullOrWhiteSpace(player.Name))
-            {
-                playerName += "Player " + player.Name;
-            }
-            else
-            {
-                playerName = player.GetType().Name.Humanize(LetterCasing.Sentence);
-            }
-            return playerName;
-        }
-
+       
         private static string DisplayContinueMessage()
         {
             Console.WriteLine("Do you wish the (P)lay again, press any other key to Quit");
@@ -109,29 +84,21 @@ namespace IyeTek.BlackJack.ConsolePresentation
             return playerAction;
         }
 
-        private static string DisplayScoreAndTakePlayerAction(HumanPlayer player, string playerAction)
+        private static string DisplayScoreAndTakePlayerAction(Player player)
         {
             Console.ResetColor();
-            Console.WriteLine("Your score is {0}, would you like to Take (H)it or (S)tay:",
+            Console.WriteLine("{0} score is {1}, would you like to Take (H)it or (S)tay:",
+                              GetPlayerName(player),
                               player.Score);
 
-            playerAction = Console.ReadLine();
+            var playerAction = Console.ReadLine();
             Console.WriteLine("");
             return playerAction;
         }
 
         private static void DisplayCardsFor(Player player)
         {
-            var prefix = "Dealer's";
-            if (player is HumanPlayer)
-            {
-                prefix = "Your";
-                if (!string.IsNullOrWhiteSpace(player.Name))
-                {
-                    prefix = player.Name + "'s";
-                }
-
-            }
+            var prefix = GetPlayerName(player);
             Console.ResetColor();
             Console.WriteLine("{0} cards:", prefix);
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -143,6 +110,20 @@ namespace IyeTek.BlackJack.ConsolePresentation
             }
 
             Console.WriteLine("");
+        }
+
+        private static string GetPlayerName(Player player)
+        {
+            var prefix = "Dealer's";
+            if (player is HumanPlayer)
+            {
+                prefix = "Your";
+                if (!string.IsNullOrWhiteSpace(player.Name))
+                {
+                    prefix = player.Name + "'s";
+                }
+            }
+            return prefix;
         }
     }
 }

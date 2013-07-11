@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using IyeTek.BlackJack.Core.Domain;
-using IyeTek.BlackJack.Core.Interfaces.Domain;
+using IyeTek.BlackJack.Core.Domain.Base;
 
 namespace IyeTek.BlackJack.Core.Interfaces.Services
 {
@@ -28,6 +28,6 @@ namespace IyeTek.BlackJack.Core.Interfaces.Services
         /// </summary>
         /// <param name="actionOnCardsInHand">perfom any additional action on the cards to be placed in the hand</param>
         /// <returns>Hand to be given to players</returns>
-        IHand MakeInitialHand(Action<Card[]> actionOnCardsInHand = null);
+        Hand MakeInitialHand(Action<Card[]> actionOnCardsInHand = null);
     }
 }

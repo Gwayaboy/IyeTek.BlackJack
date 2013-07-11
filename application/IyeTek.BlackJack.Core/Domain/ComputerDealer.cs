@@ -1,6 +1,5 @@
 
 using IyeTek.BlackJack.Core.Domain.Base;
-using IyeTek.BlackJack.Core.Interfaces.Domain;
 using IyeTek.BlackJack.Core.Interfaces.Services;
 
 namespace IyeTek.BlackJack.Core.Domain
@@ -12,13 +11,14 @@ namespace IyeTek.BlackJack.Core.Domain
     public class ComputerDealer : Player
     {
         
-        public ComputerDealer(IShoeService shoeService) : base(shoeService)
+        public ComputerDealer(IShoeService shoeService, IScoreCalculator scoreCalculator)
+            : base(shoeService, scoreCalculator)
         {
         }
 
-        protected override IHand MakeInitialHand()
+        protected override void MakeInitialHand()
         {
-            return ShoeService.MakeInitialHand(HideSecondCard);
+             Hand = ShoeService.MakeInitialHand(HideSecondCard);
         }
         
         /// <summary>

@@ -40,11 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessRuleException.cs" />
-    <Compile Include="Domain\Base\FiftyTwoCardsDeck.cs" />
-    <Compile Include="Domain\Base\Hand.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\ExecutionResult.cs" />
+    <Compile Include="Commands\NullCommand.cs" />
+    <Compile Include="Commands\PassTurnCommand.cs" />
+    <Compile Include="Commands\TakeTurnCommand.cs" />
     <Compile Include="Domain\Base\Player.cs" />
     <Compile Include="Domain\ComputerDealer.cs" />
-    <Compile Include="Domain\BlackJackDeck.cs" />
     <Compile Include="Domain\Enumerations\BlackJackCardType.cs" />
     <Compile Include="Domain\Enumerations\CardType.cs" />
     <Compile Include="Domain\Enumerations\Statuses\Lost.cs" />
@@ -53,15 +55,16 @@
     <Compile Include="Domain\Enumerations\Statuses\Tied.cs" />
     <Compile Include="Domain\Enumerations\Statuses\Won.cs" />
     <Compile Include="Domain\Enumerations\SuitType.cs" />
+    <Compile Include="Domain\FiftyTwoCardsDeck.cs" />
+    <Compile Include="Domain\Hand.cs" />
     <Compile Include="Domain\HumanPlayer.cs" />
     <Compile Include="Domain\Card.cs" />
+    <Compile Include="Domain\Services\BlackJackScoreCalculator.cs" />
     <Compile Include="Domain\Services\BlackJackShoeService.cs" />
-    <Compile Include="Domain\BlackJackHand.cs" />
     <Compile Include="Domain\Services\ShoeService.cs" />
-    <Compile Include="Domain\Services\BlackJackGameService.cs" />
-    <Compile Include="Interfaces\Domain\IDeck.cs" />
-    <Compile Include="Interfaces\Domain\IHand.cs" />
-    <Compile Include="Interfaces\Services\IGameService.cs" />
+    <Compile Include="Domain\Services\BlackJackCardGame.cs" />
+    <Compile Include="Interfaces\Services\ICardGame.cs" />
+    <Compile Include="Interfaces\Services\IScoreCalculator.cs" />
     <Compile Include="Interfaces\Services\IShoeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
