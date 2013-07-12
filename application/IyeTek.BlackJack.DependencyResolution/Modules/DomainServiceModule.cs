@@ -31,8 +31,7 @@ namespace IyeTek.BlackJack.DependencyResolution.Modules
 
         private static Func<IComponentContext, ICardGame> _cardGameConstructor =
             c => new BlackJackCardGame(DealerModule.ResolveDealer(c),
-                                       c.Resolve<IEnumerable<Player>>(),
-                                       c.Resolve<IShoeService>());
+                                       c.Resolve<IEnumerable<Player>>());
 
         public static void WithCardGame<T>(Func<IComponentContext, T> cardGameConstructor)
             where T : class, ICardGame

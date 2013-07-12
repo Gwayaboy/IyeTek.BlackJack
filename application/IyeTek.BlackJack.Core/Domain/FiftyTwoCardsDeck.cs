@@ -1,15 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IyeTek.BlackJack.Core.Domain.Base;
 using IyeTek.BlackJack.Core.Domain.Enumerations;
 
 namespace IyeTek.BlackJack.Core.Domain
 {
-    public abstract class Deck
-    {
-        public abstract IEnumerable<Card> Cards { get; }
-    }
-
     public class FiftyTwoCardsDeck : Deck
     {
         protected readonly List<Card> _cards = new List<Card>(52);

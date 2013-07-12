@@ -44,8 +44,7 @@ namespace IyeTek.BlackJack.DependencyResolution
             DomainServiceModule.WithScoreCalculator(c => new BlackJackScoreCalculator());
 
             DomainServiceModule.WithCardGame(c => new BlackJackCardGame(DealerModule.ResolveDealer(c),
-                                                                        c.Resolve<IEnumerable<Player>>(),
-                                                                        c.Resolve<IShoeService>()));
+                                                                        c.Resolve<IEnumerable<Player>>()));
         }
     }
 }

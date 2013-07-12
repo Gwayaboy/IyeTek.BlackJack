@@ -14,7 +14,6 @@ namespace IyeTek.BlackJack.Core.Domain.Services
     public class BlackJackCardGame : ICardGame
     {
         private IEnumerable<Player> _players;
-        private readonly IShoeService _shoeService;
         private Player _dealer;
         private int index = 0;
 
@@ -38,10 +37,9 @@ namespace IyeTek.BlackJack.Core.Domain.Services
         }
 
 
-        public BlackJackCardGame(Player dealer, IEnumerable<Player> players, IShoeService shoeService )
+        public BlackJackCardGame(Player dealer, IEnumerable<Player> players)
         {
             _players = players;
-            _shoeService = shoeService;
             _dealer = dealer;
         }
 

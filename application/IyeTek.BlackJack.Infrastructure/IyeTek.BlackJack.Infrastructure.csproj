@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Commands\CommandProcessor.cs" />
     <Compile Include="Commands\ICommandProcessor.cs" />
     <Compile Include="Commands\IConfigureCommand.cs" />

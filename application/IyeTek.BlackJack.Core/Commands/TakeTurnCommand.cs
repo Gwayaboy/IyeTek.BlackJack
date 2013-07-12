@@ -28,7 +28,7 @@ namespace IyeTek.BlackJack.Core.Commands
                 }
                 else if (currentPlayer.Status.Is<Tied>())
                 {
-                    errors.Add(string.Format("{0} is tie, reason: {1}", playerName, currentPlayer.Status.Reason));
+                    errors.Add(string.Format("{0} is in a push, reason: {1}", playerName, currentPlayer.Status.Reason));
                 }
                 else if (currentPlayer.Status.Is<Lost>())
                 {

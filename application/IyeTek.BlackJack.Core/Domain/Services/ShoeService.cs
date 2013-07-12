@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IyeTek.BlackJack.Core.Domain.Base;
 using IyeTek.BlackJack.Core.Interfaces.Services;
 
 namespace IyeTek.BlackJack.Core.Domain.Services

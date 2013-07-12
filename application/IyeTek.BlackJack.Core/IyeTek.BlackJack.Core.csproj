@@ -45,6 +45,7 @@
     <Compile Include="Commands\NullCommand.cs" />
     <Compile Include="Commands\PassTurnCommand.cs" />
     <Compile Include="Commands\TakeTurnCommand.cs" />
+    <Compile Include="Domain\Base\Deck.cs" />
     <Compile Include="Domain\Base\Player.cs" />
     <Compile Include="Domain\ComputerDealer.cs" />
     <Compile Include="Domain\Enumerations\BlackJackCardType.cs" />
