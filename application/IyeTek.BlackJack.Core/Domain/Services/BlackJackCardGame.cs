@@ -13,23 +13,23 @@ namespace IyeTek.BlackJack.Core.Domain.Services
     /// </summary>
     public class BlackJackCardGame : ICardGame
     {
-        private IEnumerable<Player> _players;
-        private Player _dealer;
-        private int index = 0;
+        private readonly IEnumerable<Player> _players;
+        private readonly Player _dealer;
+        private int _index = 0;
 
         public IEnumerable<Player> AllPlayers { get { return _players.Union(new[] { _dealer }); } }
 
-        public Player CurrentPlayer { get { return AllPlayers.ElementAtOrDefault(index%AllPlayers.Count()); } }
+        public Player CurrentPlayer { get { return AllPlayers.ElementAtOrDefault(_index%AllPlayers.Count()); } }
 
         public Player GoToNextPlayer()
         {
-            index++;
+            _index++;
             return CurrentPlayer;
         }
 
         public void Reset()
         {
-            index = 0;
+            _index = 0;
             foreach (var allPlayer in AllPlayers)
             {
                 allPlayer.Reset();
