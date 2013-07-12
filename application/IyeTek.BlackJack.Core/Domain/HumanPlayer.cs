@@ -17,6 +17,11 @@ namespace IyeTek.BlackJack.Core.Domain
         {
         }
 
+        public override bool CanTakeDecision
+        {
+            get { return true; }
+        }
+
         public override void TakeTurn()
         {
             HitCard();

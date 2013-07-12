@@ -14,7 +14,8 @@ namespace IyeTek.BlackJack.Core.Domain.Base
     {
         private readonly IScoreCalculator _scoreCalculator;
 
-        
+        public abstract bool CanTakeDecision { get; }
+
         /// <summary>
         /// Each player can have a name to identify him
         /// </summary>

@@ -10,10 +10,14 @@ namespace IyeTek.BlackJack.Core.Domain
     /// </summary>
     public class ComputerDealer : Player
     {
-        
         public ComputerDealer(IShoeService shoeService, IScoreCalculator scoreCalculator)
             : base(shoeService, scoreCalculator)
         {
+        }
+
+        public override bool CanTakeDecision
+        {
+            get { return false; }
         }
 
         protected override void MakeInitialHand()
