@@ -16,7 +16,7 @@ namespace IyeTek.BlackJack.Core.Commands
             var currentPlayer = CardGame.CurrentPlayer;
             
             currentPlayer.TakeTurn();
-            if (!currentPlayer.CanMakeDecision || currentPlayer.Score >= 21)
+            if (!currentPlayer.CanTakeDecision || currentPlayer.Score >= 21)
             {
                 CardGame.ResolveStatuses();
 

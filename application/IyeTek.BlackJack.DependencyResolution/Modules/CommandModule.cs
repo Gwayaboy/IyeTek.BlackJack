@@ -5,13 +5,8 @@ using IyeTek.BlackJack.Infrastructure.Commands;
 
 namespace IyeTek.BlackJack.DependencyResolution.Modules
 {
-    public class CommandModule : DomainModule
+    public class CommandModule : Module
     {
-        public override Type ConcreteType
-        {
-            get { return typeof (Command); }
-        }
-        
         protected override void Load(ContainerBuilder builder)
         {
 

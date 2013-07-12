@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Autofac;
 using IyeTek.BlackJack.Core.Domain;
+using IyeTek.BlackJack.Core.Domain.Base;
 using IyeTek.BlackJack.Core.Domain.Enumerations;
 
 namespace IyeTek.BlackJack.DependencyResolution.Modules
@@ -37,6 +38,7 @@ namespace IyeTek.BlackJack.DependencyResolution.Modules
         {
             builder
                 .Register(c => new FiftyTwoCardsDeck(_faceCardTypes, _aceCardType, _numericalCardTypes))
+                .As<Deck>()
                 .AsSelf();
         }
     }

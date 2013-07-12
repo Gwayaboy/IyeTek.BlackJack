@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using IyeTek.BlackJack.Core.Domain;
 using IyeTek.BlackJack.Core.Domain.Base;
-using IyeTek.BlackJack.Core.Interfaces.Services;
 
 namespace IyeTek.BlackJack.DependencyResolution.Modules
 {

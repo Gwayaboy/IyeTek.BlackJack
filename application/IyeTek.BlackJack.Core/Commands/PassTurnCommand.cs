@@ -13,7 +13,7 @@ namespace IyeTek.BlackJack.Core.Commands
 
         public override ExecutionResult Execute()
         {
-            CardGame.GotoNextPlayer();
+            CardGame.GoToNextPlayer();
             return _nextCommand.Execute();
         }
     }

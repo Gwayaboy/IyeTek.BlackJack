@@ -21,7 +21,7 @@ namespace IyeTek.BlackJack.Core.Domain.Services
 
         public Player CurrentPlayer { get { return AllPlayers.ElementAtOrDefault(index%AllPlayers.Count()); } }
 
-        public Player GotoNextPlayer()
+        public Player GoToNextPlayer()
         {
             index++;
             return CurrentPlayer;
