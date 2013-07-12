@@ -138,7 +138,7 @@ namespace IyeTek.BlackJack.Core.Domain.Services
                 var playerReason = string.Format("lower score ({0}) than dealer ({1})", player.Score, _dealer.Score);
                 player.Status = new Lost(playerReason);
 
-                var dealerReason = string.Format("higher score ({0}) than player ({1})", player.Score, _dealer.Score);
+                var dealerReason = string.Format("higher score ({0}) than player ({1})", _dealer.Score,player.Score);
                 _dealer.Status = new Won(dealerReason);
             }
         }

@@ -12,7 +12,7 @@ namespace IyeTek.BlackJack.Core.Commands
 
         public override ExecutionResult Execute()
         {
-            var errors = new List<string>();
+            var messages = new List<string>();
             var currentPlayer = CardGame.CurrentPlayer;
             
             currentPlayer.TakeTurn();
@@ -24,20 +24,20 @@ namespace IyeTek.BlackJack.Core.Commands
 
                 if (currentPlayer.Status.Is<Won>())
                 {
-                    errors.Add(string.Format("{0} has won, reason: {1}", playerName, currentPlayer.Status.Reason));
+                    messages.Add(string.Format("{0} has won, reason: {1}", playerName, currentPlayer.Status.Reason));
                 }
                 else if (currentPlayer.Status.Is<Tied>())
                 {
-                    errors.Add(string.Format("{0} is in a push, reason: {1}", playerName, currentPlayer.Status.Reason));
+                    messages.Add(string.Format("{0} is in a push, reason: {1}", playerName, currentPlayer.Status.Reason));
                 }
                 else if (currentPlayer.Status.Is<Lost>())
                 {
-                    errors.Add(string.Format("{0} has lost, reason: {1}", playerName, currentPlayer.Status.Reason));
+                    messages.Add(string.Format("{0} has lost, reason: {1}", playerName, currentPlayer.Status.Reason));
                 }
             }
             
             
-            return new ExecutionResult(errors);
+            return new ExecutionResult(messages);
         }
 
         private static string GetPlayerName(Player player)
